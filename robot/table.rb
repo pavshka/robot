@@ -3,9 +3,10 @@
 require_relative 'constants'
 
 class Table
-  def initialize
-    @width = Constants::TABLE_X_MAX
-    @height = Constants::TABLE_Y_MAX
+  include Constants::Table
+  def initialize(width: DEFAULT_TABLE_WIDTH, height: DEFAULT_TABLE_HEIGHT)
+    @width = width
+    @height = height
   end
 
   def valid_position?(x, y)
